@@ -1,0 +1,8 @@
+SELECT students.name, subjects.name, grades.grade, grades.date_received
+FROM grades
+JOIN students ON grades.student_id = students.id
+JOIN subjects ON grades.subject_id = subjects.id
+WHERE students.group_id = 1
+AND subjects.name = 'Math'
+ORDER BY grades.date_received DESC
+LIMIT 1;
